@@ -1,5 +1,5 @@
 <template>
-  <v-footer height="40" app>
+  <v-footer height="40" app="false" >
     <a
       v-for="item in items"
       :key="item.title"
@@ -76,4 +76,5 @@
 
     &:hover
       color: rgba(25, 118, 210, 1)
+    
 </style>

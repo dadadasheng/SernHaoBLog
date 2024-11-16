@@ -1,35 +1,44 @@
 <template>
     <div class="container">
         <div class="navigation_container">
-            <h2>SernHao.Blog</h2>
-            <p class="font-weight-light" style="font-size: 36px;">
+            <h2 @click="router.replace('/')">SernHao.Blog</h2>
+            <p class="font-weight-thin" style="font-size: 36px;">
                 建筑博客
             </p>
         </div>
-        <div class="catalogue_container">
-            <div v-for="(blog_item,index) in blog_list" key="index"  class="catalogue_item" @click="changeCurrentIndex(index)">
-                <p  style="padding: 10px 0px; font-size: 18px;" >
-                    {{ blog_item }}
-                </p>   
-                <v-divider v-if="index === current_selected_index" :thickness="5" style="margin-top: 14px;"></v-divider>
-                <div v-if="index === current_selected_index" class="introduction_content_container">
-                    <div class="toReadBtn font-weight-light" style="font-size: 24px;">阅读</div>
-                    <div style="height: 180px; width: 250px;">
+        <div class="content_container">
+            <p class="blog_title">{{ blog_list[current_selected_index] }}</p>
+            <v-divider thickness="2" color="#fff" opacity="1"></v-divider>
+            <div class="common_container">
+                <div class="sub_container">
+                    <v-btn width="50" color="#5865f2" style="margin-bottom: 40px; margin-top: 20px;">
+                        阅读
+                    </v-btn>
+                    <div class="catalogue_container">
+                        <div class="items_container">
+                            <p class="catalogue_item" v-for="(blog_title,index) in blog_list" @click="changeCurrentIndex(index)">{{ blog_title }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="introduction_container">
+                    <div class="img_container">
                         <v-img
-                        height="180"
-                        cover
+                        height="125"
                         src="https://picsum.photos/350/165?random"
                         ></v-img>
                     </div>
-                    <p style="padding-left:20px; width: 450px; line-height: 32px; font-size: 14px; color: #BBBBBB;">
-                        {{introduction_text}}
-                    </p>
-                </div>             
+                    <div class="introduction_text">
+                        {{ introduction_text}}
+                    </div>
+                </div>
             </div>
         </div>
+
     </div>
 </template>
 <script lang="ts" setup>
+    import router from '@/router';
     const current_selected_index = ref(0)
     const blog_list = [
         'Studiopepe&意大利先锋设计',
@@ -50,33 +59,79 @@
         current_selected_index.value  = index
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .container{
     box-sizing: border-box;
-    height: 150%;
+    height: 100%;
     width: 100%;
-    padding: 50px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     .navigation_container{
-        height: 100px;
+        padding: 20px;
+        height: 120px;
+        margin-bottom: 20px;
     }
-    .catalogue_container{
-        .introduction_content_container{
-            position: relative;
-            display: flex;
-            margin-top: 20px;
-            margin-bottom: 50px;
-            height: 20px;
-            width: 100%;
-            .toReadBtn{
-                flex: 1;
-                line-height: 1em;
-            }
-            p{
-                letter-spacing: 0.2em;
-            }
+    .content_container{
+        flex: 1;
+        display: flex;
+        padding-bottom: 60px;
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+        .blog_title{
+            font-size: 20px;
         }
+        .common_container{
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            .sub_container{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                .catalogue_container{
+                    flex: 1;
+                    overflow: auto;
+                    position: relative;
+                    .items_container{
+                        position: absolute;
+                        .catalogue_item{
+                            font-size: 18px;
+                            padding: 10px 0;
+                        }
+                        .catalogue_item:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .catalogue_container::-webkit-scrollbar{
+                    display: none;
+                }
+            
+            }
+            .introduction_container{
+                flex: 1;
+                display: flex;
+                padding-top: 20px;
+                .img_container{
+                    width: 250px;
+                    height: 180px;
+                }
+                .introduction_text{
+                    flex:1;
+                    padding-left: 20px;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    color:gray;
+                }
+
+            }
+
+        }
+
     }
-}
+    }
+
 </style>
