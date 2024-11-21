@@ -20,5 +20,15 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/architecture': RouteRecordInfo<'/architecture', '/architecture', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine1': RouteRecordInfo<'/magazines/magazine1', '/magazines/magazine1', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine10': RouteRecordInfo<'/magazines/magazine10', '/magazines/magazine10', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine2': RouteRecordInfo<'/magazines/magazine2', '/magazines/magazine2', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine3': RouteRecordInfo<'/magazines/magazine3', '/magazines/magazine3', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine4': RouteRecordInfo<'/magazines/magazine4', '/magazines/magazine4', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine5': RouteRecordInfo<'/magazines/magazine5', '/magazines/magazine5', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine6': RouteRecordInfo<'/magazines/magazine6', '/magazines/magazine6', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine7': RouteRecordInfo<'/magazines/magazine7', '/magazines/magazine7', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine8': RouteRecordInfo<'/magazines/magazine8', '/magazines/magazine8', Record<never, never>, Record<never, never>>,
+    '/magazines/magazine9': RouteRecordInfo<'/magazines/magazine9', '/magazines/magazine9', Record<never, never>, Record<never, never>>,
   }
 }

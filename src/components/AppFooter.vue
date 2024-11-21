@@ -1,5 +1,5 @@
 <template>
-  <v-footer height="40" app="false" >
+  <v-footer height="40" app >
     <a
       v-for="item in items"
       :key="item.title"

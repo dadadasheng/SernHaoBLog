@@ -11,7 +11,7 @@
             <v-divider thickness="2" color="#fff" opacity="1"></v-divider>
             <div class="common_container">
                 <div class="sub_container">
-                    <v-btn width="50" color="#5865f2" style="margin-bottom: 40px; margin-top: 20px;">
+                    <v-btn width="50" color="#5865f2" style="margin-bottom: 40px; margin-top: 20px;" @click="linkToMagazine()">
                         阅读
                     </v-btn>
                     <div class="catalogue_container">
@@ -40,16 +40,17 @@
 <script lang="ts" setup>
     import router from '@/router';
     const current_selected_index = ref(0)
+    const current_router_index = ref(0)
     const blog_list = [
-        'Studiopepe&意大利先锋设计',
+        '比利时建筑师Nicolas Schuybroek&极简到建筑的本质',
         'Louisa grey&伦敦简单的优雅',
         '极墅之旅&国内高端民宿设计风向',
-        'GoCstudio&西雅图住宅风向',
         'Lotta Agaton&瑞典设计美学风向',
         '极致之墅&Top villas',
         'B.E. Architecture&简单克制澳洲现代建筑',
-        '比利时建筑师Nicolas Schuybroek&极简到建筑的本质',
         'Aagnes Studio&墨西哥自然的邀约',
+        'Studiopepe&意大利先锋设计',
+        'GoCstudio&西雅图住宅风向',
         '极致之墅&中国住宅设计风向'
     ]
     const introduction_text = ' 地球是我们的家园。地球提供真实的材料、温暖的色彩和归属感。地球是我们需要承担责任的地方。室内设计项目引导我们发现我们与地球的联系，唤起我们的和平感。在这个项目中，大自然激发了我们对色彩和材料的选择，并对设计方法进行了仔细和有意识的思考。自然的色调在一个连贯的物质维度中创造出视觉上的连续性。饰面和家具与室内的陶土、沙土和粘土色调相得益彰。暖色调的灯光、天然和实验性的材料增强了我们与地球的联系感。一个悬浮的大月亮是这个装置的焦点，它重现了置身于宇宙中心的感觉。周围的环境让我们的视觉和触觉都倍感舒适。探索互联智能设备、创新材料及其无限应用的真正感官体验。'
@@ -57,6 +58,10 @@
         console.log('old value:' + current_selected_index.value)
         console.log('new value:' + index)
         current_selected_index.value  = index
+        current_router_index.value = index
+    }
+    const linkToMagazine = ()=>{
+        router.replace('magazines/magazine'+(Number(current_router_index.value)+1))
     }
 </script>
 <style lang="scss" scoped>
