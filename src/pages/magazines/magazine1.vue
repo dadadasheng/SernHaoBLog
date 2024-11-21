@@ -136,7 +136,8 @@ const Artical =
 
         ]
     }
-
+console.log(router)
+console.log(Artical)
 </script>
 <style lang="scss">
     
