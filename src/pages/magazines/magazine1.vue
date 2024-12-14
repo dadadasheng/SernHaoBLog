@@ -1,65 +1,140 @@
+
 <template>
-    <div>
-        <span @click="router.replace('/')">SernHao.Blog</span> | 
-        <span @click="router.replace('/architecture')">建筑</span>
+    <div class="magazine">
+        <div class="cover">
+            <div class="navigation">
+                <span @click="router.replace('/')">SernHao.Blog</span> | 
+                <span @click="router.replace('/architecture')">建筑</span>
+            </div>
+            <div>
+                <h4>
+                    比利时建筑师
+                </h4>
+                <div class="image_2">
+                    <v-img
+                    width="300"
+                    height="200"
+                    src="../../images/magazine_1/person_2.png"
+                    ></v-img>
+                </div>
+                <div class="image_3">
+                    <v-img
+                    width="300"
+                    height="400"
+                    src="../../images/magazine_1/person_3.png"
+                    ></v-img>
+                </div>
+                <div class="image_1">
+                    <v-img
+                    width="500"
+                    height="400"
+                    src="../../images/magazine_1/person_1.png"
+                    ></v-img>
+                </div>
+                <h1>
+                    NicolasSchuybroek
+                </h1>
+                <h2>
+                    极简到建筑的本质
+                </h2>
+                <p>
+                    {{Artical.introduction}}
+                </p>
+            </div>
+        </div>
+        <article class="article_1">
+            <header>
+                <span>
+                    {{Artical.body[0].title}}
+                </span>
+            </header>
+            <div class="article_image_1">
+                    <v-img
+                    width="600"
+                    height="400"
+                    src="../../images/magazine_1/article_1.png"
+                    ></v-img>
+            </div>
+            <main>
+                <p>
+                    {{Artical.body[0].paragraph}}
+                </p>
+            </main>
+        </article >
+        <article class="article_2">
+            <div class="article_2_image_1">
+                    <v-img
+                    width="500"
+                    height="1200"
+                    src="../../images/magazine_1/article_2.png"
+                    ></v-img>
+            </div>
+            <header>
+                <span>
+                    {{Artical.body[1].title}}
+                </span>
+            </header>
+            <main>
+                <p>
+                    {{Artical.body[1].paragraph}}
+                </p>
+                <div class="image_container">
+                    
+                </div>
+            </main>
+        </article>
+        <article class="article_3">
+            <header>
+                <span>
+                    {{Artical.body[2].title}}
+                </span>
+            </header>
+            <main>
+                <p>
+                    {{Artical.body[2].paragraph}}
+                </p>
+            </main>
+        </article>
+            <article class="article_4">
+            <header>
+                <span>
+                    {{Artical.body[3].title}}
+                </span>
+                
+            </header>
+            <main>
+                <p>{{Artical.body[3].paragraph}}</p>
+                
+            </main>
+        </article>
+        <article class="article_5">
+            <header>
+                <span>
+                    {{Artical.body[4].title}}
+                </span>
+                
+            </header>
+            <main>
+                <p>
+                    {{Artical.body[4].paragraph}}
+                </p>
+                
+            </main>
+        </article>
+        <article class="article_6">
+            <header>
+                <span>
+                    {{Artical.body[5].title}}
+                </span>
+            </header>
+            <main>
+                <p>
+                    {{Artical.body[5].paragraph}}
+                </p>
+                
+            </main>
+        </article>
     </div>
-    <div>
-        <h4>
-            比利时建筑师
-        </h4>
-        <h5>
-            NicolasSchuybroek
-        </h5>
-        {{Artical.introduction}}
-    </div>
-    <article>
-        <header>
-            {{Artical.body[0].title}}
-        </header>
-        <main>
-            {{Artical.body[0].paragraph}}
-        </main>
-    </article>
-        <article>
-        <header>
-            {{Artical.body[1].title}}
-        </header>
-        <main>
-            {{Artical.body[1].paragraph}}
-        </main>
-    </article>
-        <article>
-        <header>
-            {{Artical.body[2].title}}
-        </header>
-        <main>
-            {{Artical.body[2].paragraph}}
-        </main>
-    </article>
-        <article>
-        <header>
-            {{Artical.body[3].title}}
-        </header>
-        <main>
-            {{Artical.body[3].paragraph}}
-        </main>
-    </article>
-    <article>
-        <header>
-            {{Artical.body[4].title}}
-        </header>
-        <main>
-            {{Artical.body[4].paragraph}}
-        </main>
-    </article>
-        <article>
-        <header>
-            {{Artical.body[5].title}}
-        </header>
-        <main>
-            {{Artical.body[5].paragraph}}
-        </main>
-    </article>
 </template>
 <script setup lang="ts">
 import router from '@/router';
@@ -139,6 +214,193 @@ const Artical =
 console.log(router)
 console.log(Artical)
 </script>
-<style lang="scss">
-    
+<style scoped lang="scss">
+    @font-face {
+        font-family: 'LOGO';
+        src: url('../../../public/ZhanKuXiaoLOGOTi-2.otf');
+    }
+    .magazine{
+        height: fit-content;
+        padding: 50px;
+        .cover{
+            position: relative;
+            height: 900px;
+            .navigation{
+            margin-bottom: 10px;
+            span:hover{
+                cursor: pointer;
+                }
+            }
+            h1{
+                font-family: 'LOGO';
+                color: #5D55E8;
+                position: relative;
+                font-size: 128px;
+                background-color: transparent;
+                z-index: 0;
+                text-shadow: 1px 1px 2px rgb(255, 255, 255);
+            }
+            h2{
+                position: relative;
+                font-size: 64px;
+                background-color: transparent;
+                z-index: 0;
+                margin-bottom: 40px;
+            }
+            h4{
+                color: #5D55E8;
+                font-weight: lighter;
+            }
+            p{
+                position: absolute;
+                font-size: 14px;
+                width: 60%;
+                letter-spacing: 2px;
+                line-height: 28px;
+                background-color: transparent;
+            }
+            .image_1{
+                position: absolute;
+                top: 50px;
+                right: 100px;
+                z-index: 0;
+            }
+            .image_2{
+                position: absolute;
+                top: 100px;
+                right: 600px;
+                z-index: 0;
+            }
+            .image_3{
+                position: absolute;
+                top: 300px;
+                right: 0px;
+                z-index: 0;
+            }
+        }
+        .article_1{
+            position: relative;
+            header{
+                position: relative;
+                margin-bottom: 40px;
+                span{
+                    font-size: 36px;
+                }
+                
+            }
+            main{
+                position: relative;
+                p{
+                    width: 50%;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 28px;
+                    background-color: transparent;
+                }
+            }
+            .article_image_1{
+                position: absolute;
+                top: -220px;
+                right: 50px;
+            }
+        }
+        .article_2{
+            position: relative;
+            z-index: 1;
+            padding: 50px 0;
+            transform: translateX(-50px);
+            header{
+                width: 65%;
+                background-color: rgba(128, 128, 128, 0.329);
+                padding:40px 50px;
+                span{
+                    font-size: 36px;
+                }
+            }
+            main{
+                p{
+                    padding: 20px 50px;
+                    width: 65%;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 28px;
+                    background-color: rgba(128, 128, 128, 0.329);
+                }
+            }
+            .article_2_image_1{
+                position: absolute;
+                top: 10px;
+                right: -100px;
+                z-index: -1;
+            }
+        }
+        .article_3{
+            header{
+                margin-bottom: 40px;
+                span{
+                    font-size: 36px;
+                }
+            }
+            main{
+                p{
+                    width: 50%;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 28px;
+                    background-color: transparent;
+                }
+            }
+        }
+        .article_4{
+            header{
+                margin-bottom: 40px;
+                span{
+                    font-size: 36px;
+                }
+            }
+            main{
+                p{
+                    width: 50%;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 28px;
+                    background-color: transparent;
+                }
+            }
+        }
+        .article_5{
+            header{
+                margin-bottom: 40px;
+                span{
+                    font-size: 36px;
+                }
+            }
+            main{
+                p{
+                    width: 50%;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 28px;
+                    background-color: transparent;
+                }
+            }
+        }        
+        .article_6{
+            header{
+                margin-bottom: 40px;
+                span{
+                    font-size: 36px;
+                }
+            }
+            main{
+                p{
+                    width: 50%;
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    line-height: 28px;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
 </style>
