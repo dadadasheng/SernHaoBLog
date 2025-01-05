@@ -137,7 +137,10 @@
     </div>
 </template>
 <script setup lang="ts">
+import { useTheme } from 'vuetify';
 import router from '@/router';
+const theme = useTheme()
+theme.global.name.value = 'light'
 const Artical = 
     {
         head: "极简到建筑的本质",

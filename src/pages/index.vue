@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-    
+  <div class="container"> 
       <div class="websiteTitleContainer">
         <div class="websiteTitle">
           SernHao.BLog
@@ -17,7 +16,6 @@
           </v-container>
         </div>
       </div>
-
   </div>
 
 </template>
@@ -32,15 +30,19 @@
     },
     {
       title:'电影博客',
-      path:'/'
+      path:'/movie_blog'
     },
     {
       title:'音乐博客',
-      path:'/'
+      path:'/music_blog'
     },
     {
       title:'美食博客',
-      path:'/'
+      path:'/food_blog'
+    },
+    {
+      title:'书籍博客',
+      path:'/book_blog'
     },
     {
       title:'更多主题',
@@ -54,7 +56,7 @@
   
 </script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 .container{
   position: relative;
   height: 100%;
@@ -84,6 +86,7 @@
     }
   }
 }
-
-
+// :global(html::-webkit-scrollbar){
+//   display: none;
+// }
 </style>

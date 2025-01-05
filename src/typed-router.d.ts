@@ -20,6 +20,8 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/architecture': RouteRecordInfo<'/architecture', '/architecture', Record<never, never>, Record<never, never>>,
+    '/book_blog': RouteRecordInfo<'/book_blog', '/book_blog', Record<never, never>, Record<never, never>>,
+    '/food_blog': RouteRecordInfo<'/food_blog', '/food_blog', Record<never, never>, Record<never, never>>,
     '/magazines/magazine1': RouteRecordInfo<'/magazines/magazine1', '/magazines/magazine1', Record<never, never>, Record<never, never>>,
     '/magazines/magazine10': RouteRecordInfo<'/magazines/magazine10', '/magazines/magazine10', Record<never, never>, Record<never, never>>,
     '/magazines/magazine2': RouteRecordInfo<'/magazines/magazine2', '/magazines/magazine2', Record<never, never>, Record<never, never>>,
@@ -30,5 +32,7 @@ declare module 'vue-router/auto-routes' {
     '/magazines/magazine7': RouteRecordInfo<'/magazines/magazine7', '/magazines/magazine7', Record<never, never>, Record<never, never>>,
     '/magazines/magazine8': RouteRecordInfo<'/magazines/magazine8', '/magazines/magazine8', Record<never, never>, Record<never, never>>,
     '/magazines/magazine9': RouteRecordInfo<'/magazines/magazine9', '/magazines/magazine9', Record<never, never>, Record<never, never>>,
+    '/movie_blog': RouteRecordInfo<'/movie_blog', '/movie_blog', Record<never, never>, Record<never, never>>,
+    '/music_blog': RouteRecordInfo<'/music_blog', '/music_blog', Record<never, never>, Record<never, never>>,
   }
 }

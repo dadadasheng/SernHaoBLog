@@ -39,6 +39,13 @@
 </template>
 <script lang="ts" setup>
     import router from '@/router';
+    import axios from 'axios';
+    const axios_api = axios
+    axios_api.get("http://101.36.122.201:8080/getUser").then(
+        (res)=>{
+            console.log(res)
+        }
+    )
     const current_selected_index = ref(0)
     const current_router_index = ref(0)
     const blog_list = [
