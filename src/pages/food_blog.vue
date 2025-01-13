@@ -6,10 +6,27 @@
                 美食博客
             </p>
         </div>
-        <div class="content_container">
-            <p v-for="blog in blog_list">
-                <span>{{blog}}</span>
-            </p>
+        <div class="intro_container" v-if="false">
+            <div class="title_container">
+                <p>
+                    极简到建筑的本质
+                </p>
+            </div>
+            <div class="introduction_container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, odit atque quod modi possimus minus pariatur id iure alias molestias debitis saepe doloribus voluptatum. Quae repellendus quam voluptatibus ipsa commodi.</div>
+            <div class="image_container">
+                <v-img
+                        :aspect-ratio="1"
+                        class="bg-white"
+                        src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+                        height="100%"
+                        cover
+                    ></v-img>
+            </div>
+            <div class="button_container">
+                <p>
+                    阅读
+                </p>
+            </div>
         </div>
         <div class="content_container">
             <p v-for="blog in blog_list">
@@ -17,7 +34,7 @@
             </p>
         </div>
         <div id="input_container">
-            <v-text-field label="Label" density="compact"></v-text-field>
+            <v-text-field label="Label" density="compact"  variant="underlined"></v-text-field>
         </div>
     </div>
 </template>
@@ -78,27 +95,56 @@
     padding: 40px;
     display: flex;
     flex-direction: column;
-    .navigation_container{
-        padding: 20px;
-        height: 120px;
-        margin-bottom: 20px;
-    }
-    .content_container{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        overflow-x: scroll;
-        p{
-            padding: 0 30px;
-            width: 20px;
+        .navigation_container{
+            padding: 20px;
+            height: 120px;
         }
-        span{
-            writing-mode: vertical-lr;
-            text-orientation: upright;
+        .intro_container{
+            height: 150px;
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            .title_container{
+                width: 40px;
+                p{
+                    writing-mode: vertical-lr;
+                    text-orientation: upright;
+                }
+            }
+            .introduction_container{
+                flex: 3;
+            }
+            .image_container{
+                flex: 1;
+            }
+            .button_container{
+                width: 50px;
+                p{
+                    writing-mode: vertical-lr;
+                    text-orientation: upright;
+                }
+            }
         }
-    }
-    .content_container::-webkit-scrollbar{
-        display: none;
-    }
+        .content_container{
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            overflow-x: scroll;
+            p{
+                padding: 0 30px;
+                width: 20px;
+            }
+            span{
+                writing-mode: vertical-lr;
+                text-orientation: upright;
+            }
+        }
+        .content_container::-webkit-scrollbar{
+            display: none;
+        }
     }
 </style>

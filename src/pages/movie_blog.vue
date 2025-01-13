@@ -19,7 +19,7 @@
                     </p>
                 </div>
                 <div id="input_container">
-                        <v-text-field label="Label" density="compact"></v-text-field>
+                    <v-text-field label="Label" density="compact"  variant="underlined"></v-text-field>
                 </div>
             </div>
             <div class="left_container">
@@ -27,7 +27,13 @@
                     {{introduction_text}}
                 </div>
                 <div class="other_intro_container">
-                    
+                    <v-img
+                        :aspect-ratio="1"
+                        class="bg-white"
+                        src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+                        height="100%"
+                        cover
+                    ></v-img>
                 </div>
             </div>
         </div>

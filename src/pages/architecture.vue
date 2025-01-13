@@ -19,6 +19,9 @@
                             <p class="catalogue_item" v-for="(blog_title,index) in blog_list" @click="changeCurrentIndex(index)">{{ blog_title }}</p>
                         </div>
                     </div>
+                    <div id="input_container">
+                        <v-text-field label="Label" density="compact" variant="underlined"></v-text-field>
+                    </div>
                 </div>
 
                 <div class="introduction_container">
@@ -87,7 +90,6 @@
     .content_container{
         flex: 1;
         display: flex;
-        padding-bottom: 60px;
         padding-left: 20px;
         padding-right: 20px;
         flex-direction: column;

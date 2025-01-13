@@ -14,15 +14,23 @@
             </div>
             <div class="list_container">
                 <div class="blog_image">
-
+                    <v-img
+                        :aspect-ratio="1"
+                        class="bg-white"
+                        src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+                        height="100%"
+                        cover
+                    ></v-img>
                 </div>
                 <div class="blog_list">
                     <div class="list">
-                    <p class="list_item" v-for="blog in blog_list">
-                        {{ blog }}
-                    </p>
+                        <p class="list_item" v-for="blog in blog_list">
+                            {{ blog }}
+                        </p>
                     </div>
-
+                    <div id="input_container">
+                        <v-text-field label="Label" density="compact"  variant="outlined"></v-text-field>
+                    </div>
                 </div>
                 <div class="blog_intro_container">
                     {{introduction_text}}
@@ -133,6 +141,9 @@
                     }
                     .list::-webkit-scrollbar{
                         display: none;
+                    }
+                    #input_container{
+                        text-align: center;
                     }
                 }
 

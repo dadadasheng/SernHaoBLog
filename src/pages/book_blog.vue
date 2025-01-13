@@ -15,6 +15,9 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam fuga distinctio tempore aspernatur rem! Optio consequuntur tempore quis, recusandae fuga eaque doloremque consequatur harum velit, dicta, distinctio nesciunt ea officia!
                     </p>
+                    <v-btn width="50" color="#5865f2" style="margin-bottom: 40px; margin-top: 20px;" @click="linkToMagazine()">
+                        阅读
+                    </v-btn>
                 </div>
                 <div id="book_list_container">
                     <p class="list_item" v-for="blog in blog_list">
@@ -22,13 +25,17 @@
                     </p>
                 </div>
                 <div id="input_container">
-                    <v-text-field label="Label" density="compact"></v-text-field>
+                    <v-text-field label="Label" density="compact"  variant="underlined"></v-text-field>
                 </div>
             </div>
             <div class="content_2">
-                <div id="image_container">
-
-                </div>
+                    <v-img
+                        :aspect-ratio="1"
+                        class="bg-white"
+                        src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+                        height="100%"
+                        cover
+                    ></v-img>
             </div>
         </div>
     </div>
@@ -94,17 +101,20 @@
             margin-bottom: 20px;
         }
         .content_container{
-            flex: 1;
+            flex: 1 0 0;
             display: flex;
             flex-direction: row;
             width: 100%;
             padding: 10px;
             .content_1{
-                flex: 1;
+                flex: 1 0 0;
                 display: flex;
                 flex-direction: column;
+                padding-right: 50px;
                 #book_intro_container{
-                    height: 150px;
+                    height: 200px;
+                    border-style: solid;
+                    border-width: 0 0 1px 0;
                 }
                 #book_list_container{
                     flex: 1 1 0;
@@ -119,20 +129,13 @@
                     display: none;
                 }
                 #input_container{
+                    width: 50%;
                     height: 80px;
-                    padding:  30px 0;
+                    padding: 30px 0;
                 }
             }
             .content_2{
-                height: 100%;
-                width: 500px;
-                padding: 40px;
-                #image_container{
-                    height: 100%;
-                    width: 100%;
-                    
-                    background-color: rgb(69, 224, 80);
-                }
+                width: 400px;
             }
         }
     }
